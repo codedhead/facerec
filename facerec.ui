@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>facerecClass</class>
+ <widget class="QMainWindow" name="facerecClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>551</width>
+    <height>288</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>人脸识别</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>191</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>样本</string>
+    </property>
+    <widget class="QPushButton" name="btnAddSample">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>180</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>添加新样本</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>161</width>
+       <height>151</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;* 将一个人的照片放在一个文件夹下，文件夹名称会用做该人的姓名。&lt;/p&gt;&lt;p&gt;* 可以选择多个文件夹来同时添加多个人的数据。&lt;/p&gt;&lt;p&gt;* 预处理后的数据会存在程序目录data文件夹下面。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>10</y>
+      <width>171</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>训练</string>
+    </property>
+    <widget class="QPushButton" name="btnTrain">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>180</y>
+       <width>91</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>训练</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>131</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;* 当添加新样本后，需要重新训练。&lt;/p&gt;&lt;p&gt;* 程序会读取data文件夹下的所有文件进行训练。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboType">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>130</y>
+       <width>91</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Fisherfaces</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>LBPH</string>
+      </property>
+     </item>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_3">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>10</y>
+      <width>151</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>识别</string>
+    </property>
+    <widget class="QPushButton" name="btnRecCam">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>111</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>摄像头</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>260</y>
+      <width>81</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Jun Y, 2014/3/10</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="facerec.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>btnAddSample</sender>
+   <signal>clicked()</signal>
+   <receiver>facerecClass</receiver>
+   <slot>onBtnAddSampleClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>117</x>
+     <y>220</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>174</x>
+     <y>351</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnTrain</sender>
+   <signal>clicked()</signal>
+   <receiver>facerecClass</receiver>
+   <slot>onBtnTrainClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>262</x>
+     <y>198</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>260</x>
+     <y>304</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnRecCam</sender>
+   <signal>clicked()</signal>
+   <receiver>facerecClass</receiver>
+   <slot>onBtnRecCamClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>434</x>
+     <y>197</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>398</x>
+     <y>316</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>onBtnAddSampleClicked()</slot>
+  <slot>onBtnTrainClicked()</slot>
+  <slot>onBtnRecCamClicked()</slot>
+  <slot>onComboTypeChanged(int)</slot>
+ </slots>
+</ui>
